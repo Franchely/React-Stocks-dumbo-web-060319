@@ -6,19 +6,21 @@ import SearchBar from '../components/SearchBar'
 class MainContainer extends Component {
 
   render() {
+    
+   
     return (
       <div>
-        <SearchBar/>
+        <SearchBar handleFilter={this.props.handleFilter} handlePriceClick={this.props.handlePriceClick} handleAlphaClick={this.props.handleAlphaClick}/>
 
           <div className="row">
             <div className="col-8">
 
-              <StockContainer/>
+              <StockContainer allStocks={this.props.allStocks} handleClick={this.props.handleClick}/>
 
             </div>
             <div className="col-4">
 
-              <PortfolioContainer/>
+              <PortfolioContainer removeStock={this.props.removeStock} myStocks={this.props.myStocks}/>
 
             </div>
           </div>
